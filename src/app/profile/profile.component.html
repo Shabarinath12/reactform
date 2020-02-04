@@ -1,0 +1,67 @@
+<section>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+    <input
+      type="text"
+      placeholder="Enter name"
+      required
+      maxlength="25"
+      [(ngModel)]="contact.name"
+      name="name"
+      #contactName="ngModel"
+    />
+    <div *ngIf="!contactName.valid && contactName.touched">
+      User name is required!
+    </div>
+    <br />
+    <br />
+    <input
+      type="number"
+      placeholder="Mobile"
+      required
+      [(ngModel)]="contact.mobile"
+      name="mobile"
+      #contactMobile="ngModel"
+    />
+    <div *ngIf="!contactMobile.valid && contactMobile.touched">
+      Mobile is required!
+    </div>
+    <br />
+    <br />
+    <input
+      type="email"
+      placeholder="Email"
+      required
+      [(ngModel)]="contact.email"
+      name="email"
+      #contactEmail="ngModel"
+    />
+    <div *ngIf="!contactEmail.valid && contactEmail.touched">
+      Email is required!
+    </div>
+    <br />
+    <br />
+    <input
+      type="password"
+      placeholder="Password"
+      required
+      [(ngModel)]="contact.password"
+      name="password"
+      #contactPassword="ngModel"
+    />
+    <div *ngIf="!contactPassword.valid && contactPassword.touched">
+      Password is required!
+    </div>
+    <br />
+    <br />
+    <button type="submit" [disabled]="!contactForm.valid">
+      Register
+    </button>
+    
+  </form>
+  <br />
+  <br />
+  
+</section>
+
+
+ 
